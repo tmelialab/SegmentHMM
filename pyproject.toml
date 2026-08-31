@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "segment_hmm"
+version = "1.0.0"
+description = "Streaming VCF-based multivariate Gaussian HMM genomic segmentation"
+authors = [
+    { name="Ratu Rizki", email="raturizkiillahii@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "hmmlearn",
+    "cyvcf2"
+]
+
+[project.scripts]
+segment-hmm-preprocess = "segment_hmm.preprocess:main"
+segment-hmm-bic = "segment_hmm.compute_bic:main"
+segment-hmm-model = "segment_hmm.make_model:main"
